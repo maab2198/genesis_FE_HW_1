@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import LoadingSpinner from "./components/UI/LoadingSpinner";
+import TrendPage from "./pages/TrendPage";
+import UserPage from "./pages/UserPage";
+// const TrendPage = React.lazy(() => import("./pages/TrendPage"));
+// const UserPage = React.lazy(() => import("./pages/UserPege"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<LoadingSpinner />}>
+      <Routes>
+        {/* <Route path="/">
+          <Navigate to="/trend" />
+        </Route> */}
+        <Route path="/" element={<Navigate to="/trend" />} />
+        <Route path="/trend" element={<TrendPage />} />
+        <Route path="/user" element={<UserPage />} />
+      </Routes>
+    </Suspense>
   );
 }
 
