@@ -7,24 +7,28 @@ import { getUserInfo } from "../../lib/api"
 import { Avatar } from "../UI/Avatar"
 
 const UserInfo = ({ userId }) => {
-  const { sendRequest, status, data: userInfo } = useHttp(getUserInfo, true)
-
-  // const match = useRouteMatch();
+  const {
+    sendRequest,
+    status,
+    data: userInfo,
+    error,
+  } = useHttp(getUserInfo, true)
 
   useEffect(() => {
     sendRequest(userId)
   }, [userId, sendRequest])
-  if (status === "pending") {
-    return <LoadingSpinner />
-  }
 
   if (status === "pending") {
     return <LoadingSpinner />
   }
 
-  // if (!loadedQoute.text) {
-  //   return <h2>No area was found</h2>;
-  // }
+  if (error) {
+    return <h2>{error.message}</h2>
+  }
+
+  if (!userInfo) {
+    return <h2>Please reload the page, something went wrong</h2>
+  }
   return (
     <Fragment>
       <section className={styles.info}>
