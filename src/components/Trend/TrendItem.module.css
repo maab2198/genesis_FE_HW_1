@@ -3,6 +3,7 @@
   height: 95vh;
   padding: 1rem 3rem;
   background-color: var(--background-color-main);
+  box-shadow: var(--shadow);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12,7 +13,8 @@
 
 .video__container {
   overflow: hidden;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-m);
+  box-shadow: var(--shadow);
   display: block;
   align-self: center;
   justify-self: center;

@@ -1,5 +1,5 @@
-import { Avatar } from "../UI/Avatar"
 import styles from "./TrendItem.module.css"
+import Author from "./Author"
 
 const TrendItem = ({ item, id }) => {
   // const [imgOnHover, setImgOnHover] = useState(false);
@@ -34,7 +34,7 @@ const TrendItem = ({ item, id }) => {
         ></video>
       </div>
       <div className={styles.info}>
-        <Avatar author={item.authorMeta}></Avatar>
+        <Author author={item.authorMeta}></Author>
 
         <h3>{item.text}</h3>
         <p>{item.musicMeta.musicName}</p>
