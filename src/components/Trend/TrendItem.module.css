@@ -1,14 +1,22 @@
 .trend-item {
   margin: 2rem 0;
-  height: 95vh;
+
   padding: 1rem 3rem;
   background-color: var(--background-color-main);
   box-shadow: var(--shadow);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   border-radius: var(--border-radius);
+}
+
+@media (min-width: 1024px) {
+  .trend-item{
+  height: 95vh;
+  flex-direction: row;
+  }
 }
 
 .video__container {
@@ -19,8 +27,15 @@
   align-self: center;
   justify-self: center;
   width: calc(540 * (95vh - 1rem) / 960);
-  height: 100%;
+ 
   position: relative;
+  height: 85vh;
+}
+@media (min-width: 1024px) {
+  .video__container{
+    width: calc(540 * (95vh - 1rem) / 960);
+    height: 100%;
+  }
 }
 
 .video__container img {
@@ -42,7 +57,13 @@
 }
 
 .info {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .info {
+    width: 50%;
+  }
 }
