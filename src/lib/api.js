@@ -9,15 +9,14 @@ export async function getTrendingFeed() {
     headers: HEADERS,
   })
 
-  const data = await response.json()
+  const trendingFeed = await response.json()
 
   if (!response.ok) {
-    throw new Error(data.message || "Could not fetch trending feed.")
+    throw new Error(trendingFeed.message || "Could not fetch trending feed.")
   }
 
-  const trendingFeed = []
-  if (data) {
-    trendingFeed.push(data)
+  if (trendingFeed && trendingFeed.length !== 0) {
+    return trendingFeed
   } else {
     throw new Error("Feed is empty")
   }
@@ -54,7 +53,7 @@ export async function getUserFeed(userId) {
   if (!response.ok) {
     throw new Error(userFeed.message || "Could not fetch user feed.")
   }
-
+  console.log(userFeed)
   if (userFeed) {
     return userFeed
   } else {
