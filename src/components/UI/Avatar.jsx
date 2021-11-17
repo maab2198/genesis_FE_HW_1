@@ -2,7 +2,7 @@ import React from "react"
 import styles from "./Avatar.module.css"
 
 export const Avatar = ({ link, size, src }) => {
-  let s = size == "small" ? "60px" : "120px"
+  let s = size === "small" ? "60px" : "120px"
 
   return (
     <a className="avatar-anchor" href={"user/" + link}>
