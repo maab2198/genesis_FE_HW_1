@@ -1,11 +1,11 @@
-import styles from "./LoadingSpinner.module.css";
+import styles from "./LoadingSpinner.module.css"
 
 const LoadingSpinner = () => {
   return (
     <div className={styles.spinner}>
       <div className={styles.spinner}></div>
     </div>
-  );
-};
+  )
+}
 
-export default LoadingSpinner;
+export default LoadingSpinner
