@@ -4,7 +4,7 @@ import ThemeContext from "../../store/theme-context"
 const Theme = (props) => {
   const themeCtx = useContext(ThemeContext)
 
-  return <main className={themeCtx.name}>{props.children}</main>
+  return <div className={themeCtx.name}>{props.children}</div>
 }
 
 export default Theme
