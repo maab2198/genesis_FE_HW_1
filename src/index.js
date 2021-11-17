@@ -8,9 +8,9 @@ import ThemeProvider from "./store/ThemeProvider"
 
 ReactDOM.render(
   <ThemeProvider>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </ThemeProvider>,
   document.getElementById("root")
 )
