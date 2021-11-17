@@ -1,7 +1,7 @@
 import React from "react"
 
 const defaultTheme = {
-  name: "default",
+  name: "light-theme",
   toggleTheme: (newTheme) => {},
 }
 

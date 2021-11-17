@@ -1,6 +1,9 @@
 :root {
   --background-color-main: #fff;
-  --border-radius: 2rem;
+  --border-radius: 1rem;
+  --border-radius-m: 1rem;
+  --border-radius-sm: 0.5rem;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 body {
@@ -17,22 +20,48 @@ code {
     monospace;
 }
 
-.default {
-  --primary-color: #007bff;
+/* .default {
+  --primary-color: rgb(71, 85, 105);
   --disabled-color: #6c757d;
-}
+} */
 
 .light-theme {
-  --primary-color: #007bff;
+  --color: #1a1e23;
+  --primary-color: #ffe66d;
+  --secondary-color: #70d7d0;
   --disabled-color: #6c757d;
-  background-color: #007bff;
+  background-color: #ffe66d;
 }
+/* .light-theme {
+  --color: #032325;
+  --primary-color: #0fa3b1;
+  --secondary-color: #f7a072;
+  --disabled-color: #6c757d;
+  background-color: #b5e2fa;
+} */
 .dark-theme {
   --primary-color: #000000;
+  --secondary-color: #007bff;
   --disabled-color: #4a4a4b;
   background-color: #4a4a4b;
 }
 
 p {
-  color: var(--primary-color);
+  color: var(--color);
+}
+
+a {
+  color: var(--color);
+  text-decoration: none;
+}
+
+.btn {
+  color: var(--color);
+  border: 0;
+  background-color: var(--secondary-color);
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
