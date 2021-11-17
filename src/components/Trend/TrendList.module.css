@@ -1,0 +1,19 @@
+/* .products {
+    width: 100%;
+    margin: 1rem auto;
+    padding: 1rem 1rem;
+    animation: meals-appear 1s ease-out forwards;
+    background-image: url("./../assets/bg-pattern-paper4.jpg");
+    background-size: 10px;
+    margin-bottom: 10rem;
+  } */
+
+.trend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.trend li:nth-child(2n) {
+  flex-direction: row-reverse;
+}
