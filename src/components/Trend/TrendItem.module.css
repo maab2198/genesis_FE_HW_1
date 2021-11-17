@@ -13,9 +13,9 @@
 }
 
 @media (min-width: 1024px) {
-  .trend-item{
-  height: 95vh;
-  flex-direction: row;
+  .trend-item {
+    height: 95vh;
+    flex-direction: row;
   }
 }
 
@@ -27,12 +27,12 @@
   align-self: center;
   justify-self: center;
   width: calc(540 * (95vh - 1rem) / 960);
- 
+
   position: relative;
   height: 85vh;
 }
 @media (min-width: 1024px) {
-  .video__container{
+  .video__container {
     width: calc(540 * (95vh - 1rem) / 960);
     height: 100%;
   }

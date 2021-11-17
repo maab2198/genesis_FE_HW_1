@@ -3,7 +3,6 @@ import Author from "./Author"
 import icon from "../../assets/music_icon.png"
 import HashtagList from "./HashtagList"
 const TrendItem = ({ item, id }) => {
-
   return (
     <li className={styles["trend-item"]}>
       <div
@@ -20,7 +19,6 @@ const TrendItem = ({ item, id }) => {
           src={item.videoUrl}
           type="video/mp4"
           video="100%"
-   
           onMouseOver={(event) => event.target.play()}
           onMouseOut={(event) => event.target.pause()}
         ></video>
@@ -28,14 +26,13 @@ const TrendItem = ({ item, id }) => {
       <div className={styles.info}>
         <Author author={item.authorMeta}></Author>
         <h3>{item.text}</h3>
-   
-        <p>
-        <img src={icon} width="20px" height="20px" />
-        {item.musicMeta.musicName}
-        </p>
-        
-        <HashtagList hashtags={item.hashtags} />
 
+        <p>
+          <img src={icon} width="20px" height="20px" />
+          {item.musicMeta.musicName}
+        </p>
+
+        <HashtagList hashtags={item.hashtags} />
       </div>
     </li>
   )

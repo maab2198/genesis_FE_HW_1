@@ -1,4 +1,4 @@
-.tag{
+.tag {
   background-color: var(--secondary-color);
   box-shadow: var(--shadow);
   border-radius: var(--border-radius-sm);
@@ -6,5 +6,5 @@
   margin: 3px;
 
   display: inline-block;
-  color: var(--background-color-main)
+  color: var(--background-color-main);
 }
