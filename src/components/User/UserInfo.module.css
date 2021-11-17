@@ -1,0 +1,45 @@
+.info {
+  width: 100%;
+  display: block;
+}
+@media (min-width: 640px) {
+  .info {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 25%;
+  }
+}
+
+.btn__container {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.avatar__container {
+  position: relative;
+  top: -90px;
+  width: 25%;
+  text-align: center;
+  justify-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.desc {
+  font-size: 1rem;
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+.desc h1 {
+  font-weight: bold;
+
+  font-size: 1.5rem;
+  margin: 0.2rem;
+}
+
+.btn__container button {
+  width: 60%;
+}
