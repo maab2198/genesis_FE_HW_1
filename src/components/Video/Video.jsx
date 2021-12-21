@@ -1,5 +1,5 @@
-import React from "react"
-import { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef } from "react"
+// VIDEO TRACK
 
 const Video = () => {
   const [playing, setPlaying] = useState(false)
@@ -45,7 +45,9 @@ const Video = () => {
         loop
         ref={videoRef}
         src={url}
-      ></video>
+      >
+        <track default kind="captions" srcLang="en" src="SRC" />
+      </video>
     </div>
   )
 }

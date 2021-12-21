@@ -1,7 +1,8 @@
 import React, { useContext } from "react"
+import PropTypes from "prop-types"
 import ThemeContext from "../../store/theme-context"
 
-const Theme = (props) => {
+const Theme = ({ children }) => {
   const themeCtx = useContext(ThemeContext)
   const changeThemeHandler = () => {
     if (themeCtx.name === "light-theme") {
@@ -13,14 +14,19 @@ const Theme = (props) => {
 
   return (
     <div className={themeCtx.name}>
-      {props.children}
+      {children}
       <button
         onClick={changeThemeHandler}
         className="changeTheme"
         type="button"
+        aria-label="change theme"
       />
     </div>
   )
+}
+
+Theme.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Theme

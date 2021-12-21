@@ -20,6 +20,8 @@ const Stats = ({ stats }) => (
 )
 
 Stats.propTypes = {
-  stats: PropTypes.object.isRequired,
+  stats: PropTypes.objectOf(
+    PropTypes.oneOfType[(PropTypes.string, PropTypes.number)]
+  ).isRequired,
 }
 export default Stats

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 
 import styles from "./UserInfo.module.css"
@@ -34,7 +34,7 @@ const UserInfo = ({ userId }) => {
     return <h2>Please reload the page, something went wrong</h2>
   }
   return (
-    <Fragment>
+    <>
       <section className={styles.info}>
         <Stats stats={userInfo.stats} />
 
@@ -52,7 +52,7 @@ const UserInfo = ({ userId }) => {
         <h1>{userInfo.user.nickname}</h1>
         <pre>{userInfo.user.signature}</pre>
       </section>
-    </Fragment>
+    </>
   )
 }
 

@@ -1,12 +1,12 @@
 import React, { useEffect } from "react"
 
 import TrendItem from "./TrendItem"
-import LoadingSpinner from "../../components/UI/LoadingSpinner"
+import LoadingSpinner from "../UI/LoadingSpinner"
 import styles from "./TrendList.module.css"
 import useHttp from "../../hooks/use-http"
 
 import { getTrendingFeed } from "../../lib/api"
-
+// ERROR CLASSNaME
 const TrendList = () => {
   const {
     sendRequest,
@@ -25,7 +25,7 @@ const TrendList = () => {
 
   return (
     <div>
-      {error && <h1 className={"a"}>{error.message}</h1>}
+      {error && <h1 className="a">{error.message}</h1>}
 
       <ul className={styles.trend}>
         {status !== "pending" &&

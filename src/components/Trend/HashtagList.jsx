@@ -9,7 +9,7 @@ const Hashtag = ({ hashtags }) => {
   }
   return (
     <p>
-      {hashtags.map((tag, id) => (
+      {hashtags.map((tag) => (
         <span key={tag.name} className={styles.tag}>
           #{tag.name}{" "}
         </span>
@@ -19,7 +19,7 @@ const Hashtag = ({ hashtags }) => {
 }
 
 Hashtag.propTypes = {
-  hashtag: PropTypes.arrayOf(PropTypes.instanceOf(object)),
+  hashtags: PropTypes.arrayOf(PropTypes.instanceOf(object)).isRequired,
 }
 
 export default Hashtag

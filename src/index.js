@@ -1,9 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import App from "./App.js"
-import "./index.css"
 import { BrowserRouter } from "react-router-dom"
+import App from "./App"
 import ThemeProvider from "./store/ThemeProvider"
+import "./index.css"
 
 ReactDOM.render(
   <ThemeProvider>

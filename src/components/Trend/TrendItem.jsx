@@ -1,9 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Author from "./Author"
-import HashtagList from "./HashtagList"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faHeart,
@@ -12,8 +9,11 @@ import {
   faMusic,
 } from "@fortawesome/free-solid-svg-icons"
 
+import Author from "./Author"
+import HashtagList from "./HashtagList"
+
 import styles from "./TrendItem.module.css"
-// FIX VIDEO TRACK
+// FIX VIDEO TRACK IMG ALT
 const TrendItem = ({ item }) => (
   <li className={styles["trend-item"]}>
     <div
@@ -23,20 +23,23 @@ const TrendItem = ({ item }) => (
         maxHeight: item.videoMeta.height,
       }}
     >
-      <img src={item.covers.default} />
+      <img alt="djhfb" src={item.covers.default} />
       <video
         controls=""
         name="Video Name"
         src={item.videoUrl}
         type="video/mp4"
         video="100%"
-        track={item.videoUrl}
         onMouseOver={(event) => event.target.play()}
         onMouseOut={(event) => event.target.pause()}
-      ></video>
+        onFocus={() => {}}
+        onBlur={() => {}}
+      >
+        <track default kind="captions" srcLang="en" src="SRC" />
+      </video>
     </div>
     <div className={styles.info}>
-      <Author author={item.authorMeta}></Author>
+      <Author author={item.authorMeta} />
       <h3>{item.text}</h3>
 
       <p>
@@ -65,7 +68,9 @@ const TrendItem = ({ item }) => (
 )
 
 TrendItem.propTypes = {
-  item: PropTypes.object.isRequired,
+  item: PropTypes.objectOf(
+    PropTypes.oneOfType[(PropTypes.string, PropTypes.number)]
+  ).isRequired,
 }
 
 export default TrendItem
