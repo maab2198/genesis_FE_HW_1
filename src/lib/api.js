@@ -50,8 +50,6 @@ export async function getUserFeed(userId) {
 
   if (!userFeed) {
     throw new Error("Feed is empty")
-    
-  } 
-    return userFeed
-
+  }
+  return userFeed
 }

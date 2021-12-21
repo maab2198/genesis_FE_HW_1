@@ -1,4 +1,4 @@
-import React, {useEffect } from "react"
+import React, { useEffect } from "react"
 
 import TrendItem from "./TrendItem"
 import LoadingSpinner from "../../components/UI/LoadingSpinner"

@@ -10,7 +10,7 @@ const Avatar = ({ link, size, src }) => {
     <a className="avatar-anchor" href={"user/" + link}>
       <span className={styles.avatar__wrapper} style={{ width: s, height: s }}>
         <img
-          alt = {src}
+          alt={src}
           loading="lazy"
           src={src}
           className={styles.avatar}
@@ -21,7 +21,6 @@ const Avatar = ({ link, size, src }) => {
     </a>
   )
 }
-
 
 Avatar.propTypes = {
   link: PropTypes.string.isRequired,

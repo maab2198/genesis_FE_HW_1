@@ -14,7 +14,11 @@ const Theme = (props) => {
   return (
     <div className={themeCtx.name}>
       {props.children}
-      <button onClick={changeThemeHandler} className="changeTheme"  type="button"/>
+      <button
+        onClick={changeThemeHandler}
+        className="changeTheme"
+        type="button"
+      />
     </div>
   )
 }
