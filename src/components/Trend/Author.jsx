@@ -1,9 +1,10 @@
 import React from "react"
+import PropTypes from "prop-types"
+import Avatar  from "../UI/Avatar"
 import styles from "./Author.module.css"
-import { Avatar } from "../UI/Avatar"
 
-const Author = ({ author }) => {
-  return (
+
+const Author = ({ author }) => (
     <div className={styles.avatar__container}>
       <Avatar size="small" link={author.name} src={author.avatar} />
       <a className={styles.author_names} href={"user/" + author.name}>
@@ -12,6 +13,9 @@ const Author = ({ author }) => {
       </a>
     </div>
   )
+
+Author.propTypes = {
+  author: PropTypes.object.isRequired
 }
 
 export default Author

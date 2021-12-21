@@ -1,6 +1,8 @@
+import React from "react"
+import PropTypes from "prop-types"
 import styles from "./Stats.module.css"
-const Stats = ({ stats }) => {
-  return (
+
+const Stats = ({ stats }) =>  (
     <div className={styles.stats}>
       <p className={styles["stat-element"]}>
         <span>{stats.followingCount}</span>
@@ -16,6 +18,9 @@ const Stats = ({ stats }) => {
       </p>
     </div>
   )
-}
 
+
+Stats.propTypes = {
+  stats: PropTypes.object.isRequired
+}
 export default Stats

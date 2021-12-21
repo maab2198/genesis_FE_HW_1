@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import React, { useContext } from "react"
 import ThemeContext from "../../store/theme-context"
 
 const Theme = (props) => {
@@ -14,7 +14,7 @@ const Theme = (props) => {
   return (
     <div className={themeCtx.name}>
       {props.children}
-      <button onClick={changeThemeHandler} className="changeTheme"></button>
+      <button onClick={changeThemeHandler} className="changeTheme"  type="button"/>
     </div>
   )
 }

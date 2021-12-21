@@ -1,6 +1,7 @@
-import styles from "./TrendItem.module.css"
+import React from "react"
+import PropTypes from "prop-types"
+
 import Author from "./Author"
-import icon from "../../assets/music_icon.png"
 import HashtagList from "./HashtagList"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -11,8 +12,9 @@ import {
   faMusic,
 } from "@fortawesome/free-solid-svg-icons"
 
-const TrendItem = ({ item, id }) => {
-  return (
+import styles from "./TrendItem.module.css"
+// FIX VIDEO TRACK 
+const TrendItem = ({ item }) =>  (
     <li className={styles["trend-item"]}>
       <div
         className={styles.video__container}
@@ -28,6 +30,7 @@ const TrendItem = ({ item, id }) => {
           src={item.videoUrl}
           type="video/mp4"
           video="100%"
+          track = {item.videoUrl}
           onMouseOver={(event) => event.target.play()}
           onMouseOut={(event) => event.target.pause()}
         ></video>
@@ -60,6 +63,11 @@ const TrendItem = ({ item, id }) => {
       </div>
     </li>
   )
+
+
+TrendItem.propTypes = {
+  item: PropTypes.object.isRequired
 }
+
 
 export default TrendItem

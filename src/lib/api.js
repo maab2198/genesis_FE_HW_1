@@ -15,12 +15,9 @@ export async function getTrendingFeed() {
     throw new Error(trendingFeed.message || "Could not fetch trending feed.")
   }
 
-  if (trendingFeed && trendingFeed.length !== 0) {
-    return trendingFeed
-  } else {
+  if (!trendingFeed || trendingFeed.length === 0) {
     throw new Error("Feed is empty")
   }
-
   return trendingFeed
 }
 
@@ -34,12 +31,9 @@ export async function getUserInfo(userId) {
     throw new Error(userData.message || "Could not fetch user info.")
   }
 
-  if (userData) {
-    return userData
-  } else {
+  if (!userData) {
     throw new Error("User info is empty")
   }
-
   return userData
 }
 
@@ -53,12 +47,11 @@ export async function getUserFeed(userId) {
   if (!response.ok) {
     throw new Error(userFeed.message || "Could not fetch user feed.")
   }
-  console.log(userFeed)
-  if (userFeed) {
-    return userFeed
-  } else {
-    throw new Error("Feed is empty")
-  }
 
-  return userFeed
+  if (!userFeed) {
+    throw new Error("Feed is empty")
+    
+  } 
+    return userFeed
+
 }

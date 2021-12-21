@@ -10,9 +10,6 @@ function App() {
   return (
     <Suspense fallback={<LoadingSpinner />}>
       <Routes>
-        {/* <Route path="/">
-          <Navigate to="/trend" />
-        </Route> */}
         <Route path="/" element={<Navigate to="/trend" />} />
         <Route path="/trend" element={<TrendPage />} />
         <Route path="/user/:userId" element={<UserPage />} />

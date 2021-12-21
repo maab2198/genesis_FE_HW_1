@@ -1,3 +1,4 @@
+import React from "react"
 import { useEffect } from "react"
 
 import styles from "./UserFeed.module.css"
@@ -5,9 +6,9 @@ import styles from "./UserFeed.module.css"
 import useHttp from "../../hooks/use-http"
 import { getTrendingFeed } from "../../lib/api"
 
-import UserFeedItem from "../User/UserFeedItem"
+import UserFeedItem from "./UserFeedItem"
 
-const UserFeed = ({ userId }) => {
+const UserFeed = () => {
   const {
     sendRequest,
     status,

@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react"
+import React, {useEffect } from "react"
+
 import TrendItem from "./TrendItem"
-import styles from "./TrendList.module.css"
 import LoadingSpinner from "../../components/UI/LoadingSpinner"
+import styles from "./TrendList.module.css"
 import useHttp from "../../hooks/use-http"
+
 import { getTrendingFeed } from "../../lib/api"
 
 const TrendList = () => {
@@ -26,7 +28,7 @@ const TrendList = () => {
       {error && <h1 className={"a"}>{error.message}</h1>}
 
       <ul className={styles.trend}>
-        {status != "pending" &&
+        {status !== "pending" &&
           !error &&
           trendingFeed.map((item) => (
             <TrendItem key={item.id} id={item.id} item={item} />

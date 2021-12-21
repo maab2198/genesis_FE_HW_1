@@ -1,7 +1,7 @@
 import React from "react"
-import SectionWrapper from "../components/UI/SectionWrapper"
 import { useParams } from "react-router-dom"
 
+import SectionWrapper from "../components/UI/SectionWrapper"
 import Layout from "../components/Layout/Layout"
 import UserInfo from "../components/User/UserInfo"
 import UserFeed from "../components/User/UserFeed"

@@ -1,7 +1,9 @@
-import styles from "./UserFeedItem.module.css"
+import React from "react"
+import PropTypes from "prop-types"
 
-const UserFeedItem = ({ item }) => {
-  return (
+import styles from "./UserFeedItem.module.css"
+// VIDEO
+const UserFeedItem = ({ item }) => (
     <li>
       <video
         className={styles.video}
@@ -14,6 +16,10 @@ const UserFeedItem = ({ item }) => {
       ></video>
     </li>
   )
+
+
+UserFeedItem.propTypes = {
+  item: PropTypes.object.isRequired
 }
 
 export default UserFeedItem

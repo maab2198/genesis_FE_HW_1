@@ -1,10 +1,14 @@
-import { Fragment, useEffect } from "react"
-import Stats from "./Stats"
+import React, { Fragment, useEffect } from "react"
+import PropTypes from "prop-types"
+
 import styles from "./UserInfo.module.css"
-import LoadingSpinner from "../../components/UI/LoadingSpinner"
+
 import useHttp from "../../hooks/use-http"
 import { getUserInfo } from "../../lib/api"
-import { Avatar } from "../UI/Avatar"
+
+import LoadingSpinner from "../UI/LoadingSpinner"
+import Stats from "./Stats"
+import Avatar from "../UI/Avatar"
 
 const UserInfo = ({ userId }) => {
   const {
@@ -50,6 +54,10 @@ const UserInfo = ({ userId }) => {
       </section>
     </Fragment>
   )
+}
+
+UserInfo.propTypes = {
+  userId: PropTypes.string.isRequired
 }
 
 export default UserInfo

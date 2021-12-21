@@ -1,6 +1,7 @@
-import { useState } from "react"
+import React from "react"
+import {useState, useEffect, useRef} from "react"
 
-const Video = (props) => {
+const Video = () => {
   const [playing, setPlaying] = useState(false)
   const videoRef = useRef(null)
 
