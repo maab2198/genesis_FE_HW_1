@@ -1,55 +1,24 @@
-import React, { useState, useEffect, useRef } from "react"
-// VIDEO TRACK
+import React from "react"
+import PropTypes from "prop-types"
 
-const Video = () => {
-  const [playing, setPlaying] = useState(false)
-  const videoRef = useRef(null)
+const Video = ({ videoUrl }) => (
+  <video
+    controls=""
+    name="Video Name"
+    src={videoUrl}
+    type="video/mp4"
+    video="100%"
+    onMouseOver={(event) => event.target.play()}
+    onMouseOut={(event) => event.target.pause()}
+    onFocus={() => {}}
+    onBlur={() => {}}
+  >
+    <track default kind="captions" srcLang="en" src="SRC" />
+  </video>
+)
 
-  useEffect(() => {
-    window.addEventListener("scroll", debounce(handleScroll, 200))
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
-
-  const startVideo = () => {
-    videoRef.current.pause()
-    setPlaying(false)
-  }
-
-  const pauseVideo = () => {
-    videoRef.current.play()
-    setPlaying(true)
-  }
-
-  const handleScroll = (e) => {
-    if (playing) {
-      pauseVideo()
-    }
-  }
-
-  const handleVideoPress = () => {
-    if (playing) {
-      startVideo()
-    } else {
-      pauseVideo()
-    }
-  }
-
-  return (
-    <div className="video">
-      <video
-        onClick={handleVideoPress}
-        className="video__player"
-        loop
-        ref={videoRef}
-        src={url}
-      >
-        <track default kind="captions" srcLang="en" src="SRC" />
-      </video>
-    </div>
-  )
+Video.propTypes = {
+  videoUrl: PropTypes.string.isRequired,
 }
 
 export default Video

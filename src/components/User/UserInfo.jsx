@@ -9,6 +9,7 @@ import { getUserInfo } from "../../lib/api"
 import LoadingSpinner from "../UI/LoadingSpinner"
 import Stats from "./Stats"
 import Avatar from "../UI/Avatar"
+import Error from "../UI/Error"
 
 const UserInfo = ({ userId }) => {
   const {
@@ -27,16 +28,13 @@ const UserInfo = ({ userId }) => {
   }
 
   if (error) {
-    return <h2>{error.message}</h2>
+    return <Error message={error.message} />
   }
 
-  if (!userInfo) {
-    return <h2>Please reload the page, something went wrong</h2>
-  }
   return (
     <>
       <section className={styles.info}>
-        <Stats stats={userInfo.stats} />
+        {userInfo.stats && <Stats stats={userInfo.stats} />}
 
         <div className={styles.avatar__container}>
           <Avatar size="med" src={userInfo.user.avatarMedium} link={userId} />

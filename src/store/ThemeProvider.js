@@ -1,11 +1,12 @@
 import React, { useState } from "react"
+import PropTypes from "prop-types"
 import ThemeContext from "./theme-context"
 
 const defaultTheme = {
   name: "light-theme",
 }
 
-const ThemeProvider = (props) => {
+const ThemeProvider = ({ children }) => {
   const [themeState, setTheme] = useState(defaultTheme)
 
   const toggleCartHandler = (newName) => {
@@ -18,10 +19,14 @@ const ThemeProvider = (props) => {
   }
 
   return (
-    <ThemeContext.Provider value={themeContext}>
-      {props.children}
+    <ThemeContext.Provider value={React.useMemo(themeContext)}>
+      {children}
     </ThemeContext.Provider>
   )
+}
+
+ThemeProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default ThemeProvider

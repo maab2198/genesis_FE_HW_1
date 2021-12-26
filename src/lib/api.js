@@ -1,7 +1,7 @@
-const PATH = "https://tiktok33.p.rapidapi.com/"
+const PATH = "https://tiktok33.p.rapidapi.com"
 const HEADERS = {
   "x-rapidapi-host": "tiktok33.p.rapidapi.com",
-  "x-rapidapi-key": "c1257dc04cmshd888bbb072eb770p1f2b8ajsnbf16d4cd1d66",
+  "x-rapidapi-key": "e354906d46mshe8a86828f615be6p15a959jsn223d667b7313",
 }
 
 export async function getTrendingFeed() {
@@ -31,7 +31,7 @@ export async function getUserInfo(userId) {
     throw new Error(userData.message || "Could not fetch user info.")
   }
 
-  if (!userData) {
+  if (!userData || !userData.user || !userData.stats) {
     throw new Error("User info is empty")
   }
   return userData

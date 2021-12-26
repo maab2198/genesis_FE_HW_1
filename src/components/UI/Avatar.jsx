@@ -1,21 +1,23 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Link from "react-router-dom"
+import { Link } from "react-router-dom"
 import styles from "./Avatar.module.css"
 
 const Avatar = ({ link, size, src }) => {
-  const s = size === "small" ? "60px" : "120px"
+  const imgSize = size === "small" ? "60px" : "120px"
 
   return (
-    <Link className="avatar-anchor" to={`user/${link}`}>
-      <span className={styles.avatar__wrapper} style={{ width: s, height: s }}>
+    <Link className="avatar-anchor" to={`/user/${link}`} replace>
+      <span
+        className={styles.avatar__wrapper}
+        style={{ width: imgSize, height: imgSize }}
+      >
         <img
           alt={src}
-          loading="lazy"
           src={src}
           className={styles.avatar}
-          width={s}
-          height={s}
+          width={imgSize}
+          height={imgSize}
         />
       </span>
     </Link>
@@ -24,7 +26,7 @@ const Avatar = ({ link, size, src }) => {
 
 Avatar.propTypes = {
   link: PropTypes.string.isRequired,
-  size: PropTypes.number.isRequired,
+  size: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
 }
 

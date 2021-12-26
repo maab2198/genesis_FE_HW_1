@@ -6,6 +6,7 @@ import useHttp from "../../hooks/use-http"
 import { getTrendingFeed } from "../../lib/api"
 
 import UserFeedItem from "./UserFeedItem"
+import Error from "../UI/Error"
 
 const UserFeed = () => {
   const {
@@ -19,8 +20,8 @@ const UserFeed = () => {
     sendRequest()
   }, [sendRequest])
 
-  if (status === "pending") {
-    return <p>Loading .. </p>
+  if (error) {
+    return <Error message={error.message} />
   }
 
   return (

@@ -11,9 +11,10 @@ import {
 
 import Author from "./Author"
 import HashtagList from "./HashtagList"
+import Video from "../Video/Video"
 
 import styles from "./TrendItem.module.css"
-// FIX VIDEO TRACK IMG ALT
+
 const TrendItem = ({ item }) => (
   <li className={styles["trend-item"]}>
     <div
@@ -23,20 +24,8 @@ const TrendItem = ({ item }) => (
         maxHeight: item.videoMeta.height,
       }}
     >
-      <img alt="djhfb" src={item.covers.default} />
-      <video
-        controls=""
-        name="Video Name"
-        src={item.videoUrl}
-        type="video/mp4"
-        video="100%"
-        onMouseOver={(event) => event.target.play()}
-        onMouseOut={(event) => event.target.pause()}
-        onFocus={() => {}}
-        onBlur={() => {}}
-      >
-        <track default kind="captions" srcLang="en" src="SRC" />
-      </video>
+      <img alt={item.text} src={item.covers.default} />
+      <Video videoUrl={item.videoUrl} />
     </div>
     <div className={styles.info}>
       <Author author={item.authorMeta} />
@@ -47,7 +36,9 @@ const TrendItem = ({ item }) => (
         <span className={styles.caption}>{item.musicMeta.musicName}</span>
       </p>
 
-      <HashtagList hashtags={item.hashtags} />
+      {item.hashtags && item.hashtags.lendth && (
+        <HashtagList hashtags={item.hashtags} />
+      )}
 
       <div className={styles.stats}>
         <p>
@@ -69,7 +60,13 @@ const TrendItem = ({ item }) => (
 
 TrendItem.propTypes = {
   item: PropTypes.objectOf(
-    PropTypes.oneOfType[(PropTypes.string, PropTypes.number)]
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.bool,
+      PropTypes.array,
+      PropTypes.object,
+    ])
   ).isRequired,
 }
 
