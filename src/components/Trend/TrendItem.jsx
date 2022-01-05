@@ -36,7 +36,7 @@ const TrendItem = ({ item }) => (
         <span className={styles.caption}>{item.musicMeta.musicName}</span>
       </p>
 
-      {item.hashtags && item.hashtags.lendth && (
+      {item.hashtags && item.hashtags.length && (
         <HashtagList hashtags={item.hashtags} />
       )}
 
