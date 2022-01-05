@@ -7,8 +7,7 @@ import UserInfo from "../components/User/UserInfo"
 import UserFeed from "../components/User/UserFeed"
 
 export default function UserPage() {
-  const params = useParams()
-  const { userId } = params
+  const { userId } = useParams()
 
   return (
     <Layout>
