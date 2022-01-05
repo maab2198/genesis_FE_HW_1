@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useMemo } from "react"
 import PropTypes from "prop-types"
 import ThemeContext from "./theme-context"
 
@@ -7,19 +7,19 @@ const defaultTheme = {
 }
 
 const ThemeProvider = ({ children }) => {
-  const [themeState, setTheme] = useState(defaultTheme)
+  const [theme, setTheme] = useState(defaultTheme)
 
   const toggleCartHandler = (newName) => {
     setTheme({ name: newName })
   }
 
   const themeContext = {
-    name: themeState.name,
+    name: theme.name,
     toggleTheme: toggleCartHandler,
   }
 
   return (
-    <ThemeContext.Provider value={React.useMemo(themeContext)}>
+    <ThemeContext.Provider value={useMemo(()=>themeContext)}>
       {children}
     </ThemeContext.Provider>
   )

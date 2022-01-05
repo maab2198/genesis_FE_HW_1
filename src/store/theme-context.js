@@ -1,10 +1,10 @@
-import React from "react"
+import {createContext} from "react"
 
 const defaultTheme = {
   name: "light-theme",
   toggleTheme: () => {},
 }
 
-const ThemeContext = React.createContext(defaultTheme)
+const ThemeContext = createContext(defaultTheme)
 
 export default ThemeContext
