@@ -22,10 +22,10 @@ code {
     monospace;
 }
 
-/* .default {
+.default {
   --primary-color: rgb(71, 85, 105);
   --disabled-color: #6c757d;
-} */
+} 
 
 .light-theme {
   --color: #1a1e23;
@@ -35,13 +35,7 @@ code {
 
   background-color: #ffe66d;
 }
-/* .light-theme {
-  --color: #032325;
-  --primary-color: #0fa3b1;
-  --secondary-color: #f7a072;
-  --disabled-color: #6c757d;
-  background-color: #b5e2fa;
-} */
+
 .dark-theme {
   --primary-color: #000000;
   --secondary-color: #007bff;

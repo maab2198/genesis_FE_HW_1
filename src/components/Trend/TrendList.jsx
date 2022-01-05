@@ -6,7 +6,7 @@ import styles from "./TrendList.module.css"
 import useHttp from "../../hooks/use-http"
 
 import { getTrendingFeed } from "../../lib/api"
-// ERROR CLASSNaME
+
 const TrendList = () => {
   const {
     sendRequest,
