@@ -4,7 +4,7 @@ import PropTypes, { object } from "prop-types"
 import styles from "./HashtagList.module.css"
 
 const HashtagList = ({ hashtags }) => {
-  if (!hashtags || hashtags.length === 0) {
+  if (!hashtags || !hashtags.length) {
     return null
   }
   return (

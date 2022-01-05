@@ -15,7 +15,7 @@ export async function getTrendingFeed() {
     throw new Error(trendingFeed.message || "Could not fetch trending feed.")
   }
 
-  if (!trendingFeed || trendingFeed.length === 0) {
+  if (!trendingFeed || !trendingFeed.length) {
     throw new Error("Feed is empty")
   }
   return trendingFeed
