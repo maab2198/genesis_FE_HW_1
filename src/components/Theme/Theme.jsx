@@ -1,9 +1,11 @@
 import React, { useContext } from "react"
 import PropTypes from "prop-types"
+
 import ThemeContext from "../../store/theme-context"
 
 const Theme = ({ children }) => {
   const themeCtx = useContext(ThemeContext)
+
   const changeThemeHandler = () => {
     if (themeCtx.name === "light-theme") {
       themeCtx.toggleTheme("dark-theme")

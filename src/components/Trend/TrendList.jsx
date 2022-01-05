@@ -30,14 +30,9 @@ const TrendList = () => {
 
   return (
     <div>
-
-
       <ul className={styles.trend}>
-        {
-          !error &&
-          trendingFeed.map((item) => (
-            <TrendItem key={item.id}  item={item} />
-          ))}
+        {!error &&
+          trendingFeed.map((item) => <TrendItem key={item.id} item={item} />)}
       </ul>
     </div>
   )

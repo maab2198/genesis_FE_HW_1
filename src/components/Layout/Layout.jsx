@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
+
 import Theme from "../Theme/Theme"
+
 import styles from "./Layout.module.css"
 
 const Layout = ({ children }) => (

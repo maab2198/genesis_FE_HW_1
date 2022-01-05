@@ -19,7 +19,7 @@ const ThemeProvider = ({ children }) => {
   }
 
   return (
-    <ThemeContext.Provider value={useMemo(()=>themeContext)}>
+    <ThemeContext.Provider value={useMemo(() => themeContext)}>
       {children}
     </ThemeContext.Provider>
   )

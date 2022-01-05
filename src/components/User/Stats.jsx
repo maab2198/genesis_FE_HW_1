@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+
 import styles from "./Stats.module.css"
 
 const Stats = ({ stats }) => (

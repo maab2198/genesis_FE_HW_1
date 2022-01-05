@@ -1,8 +1,6 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 
-import styles from "./UserInfo.module.css"
-
 import useHttp from "../../hooks/use-http"
 import { getUserInfo } from "../../lib/api"
 
@@ -10,6 +8,8 @@ import LoadingSpinner from "../UI/LoadingSpinner"
 import Stats from "./Stats"
 import Avatar from "../UI/Avatar"
 import Error from "../UI/Error"
+
+import styles from "./UserInfo.module.css"
 
 const UserInfo = ({ userId }) => {
   const {

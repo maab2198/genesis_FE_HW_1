@@ -7,6 +7,7 @@ const HashtagList = ({ hashtags }) => {
   if (!hashtags || !hashtags.length) {
     return null
   }
+
   return (
     <p>
       {hashtags.map((tag) => (

@@ -1,12 +1,12 @@
 import React, { useEffect } from "react"
 
-import styles from "./UserFeed.module.css"
-
 import useHttp from "../../hooks/use-http"
 import { getTrendingFeed } from "../../lib/api"
 
 import UserFeedItem from "./UserFeedItem"
 import Error from "../UI/Error"
+
+import styles from "./UserFeed.module.css"
 
 const UserFeed = () => {
   const {

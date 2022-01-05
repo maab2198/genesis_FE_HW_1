@@ -25,7 +25,7 @@ code {
 .default {
   --primary-color: rgb(71, 85, 105);
   --disabled-color: #6c757d;
-} 
+}
 
 .light-theme {
   --color: #1a1e23;
