@@ -4,6 +4,7 @@ import TrendItem from "./TrendItem"
 import LoadingSpinner from "../UI/LoadingSpinner"
 import styles from "./TrendList.module.css"
 import useHttp from "../../hooks/use-http"
+import Error from "../UI/Error"
 
 import { getTrendingFeed } from "../../lib/api"
 
@@ -23,15 +24,19 @@ const TrendList = () => {
     return <LoadingSpinner />
   }
 
+  if (error) {
+    return <Error message={error.message} />
+  }
+
   return (
     <div>
-      {error && <h1 className="a">{error.message}</h1>}
+
 
       <ul className={styles.trend}>
-        {status !== "pending" &&
+        {
           !error &&
           trendingFeed.map((item) => (
-            <TrendItem key={item.id} id={item.id} item={item} />
+            <TrendItem key={item.id}  item={item} />
           ))}
       </ul>
     </div>
