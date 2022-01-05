@@ -15,43 +15,54 @@ import Video from "../Video/Video"
 
 import styles from "./TrendItem.module.css"
 
-const TrendItem = ({ item }) => (
+const TrendItem = ({
+  item: {
+    videoMeta,
+    covers,
+    videoUrl,
+    authorMeta,
+    text,
+    musicMeta,
+    hashtags,
+    diggCount,
+    shareCount,
+    commentCount,
+  }
+}) => (
   <li className={styles["trend-item"]}>
     <div
       className={styles.video__container}
       style={{
-        maxWidth: item.videoMeta.width,
-        maxHeight: item.videoMeta.height,
+        maxWidth: videoMeta.width,
+        maxHeight: videoMeta.height,
       }}
     >
-      <img alt={item.text} src={item.covers.default} />
-      <Video videoUrl={item.videoUrl} />
+      <img alt={text} src={covers.default} />
+      <Video videoUrl={videoUrl} />
     </div>
     <div className={styles.info}>
-      <Author author={item.authorMeta} />
-      <h3>{item.text}</h3>
+      <Author author={authorMeta} />
+      <h3>{text}</h3>
 
       <p>
         <FontAwesomeIcon icon={faMusic} />
-        <span className={styles.caption}>{item.musicMeta.musicName}</span>
+        <span className={styles.caption}>{musicMeta.musicName}</span>
       </p>
 
-      {item.hashtags && item.hashtags.length && (
-        <HashtagList hashtags={item.hashtags} />
-      )}
+      {hashtags && hashtags.length && <HashtagList hashtags={hashtags} />}
 
       <div className={styles.stats}>
         <p>
           <FontAwesomeIcon icon={faHeart} />
-          <span className={styles.caption}>{item.diggCount}</span>
+          <span className={styles.caption}>{diggCount}</span>
         </p>
         <p>
           <FontAwesomeIcon icon={faShare} />
-          <span className={styles.caption}>{item.shareCount}</span>
+          <span className={styles.caption}>{shareCount}</span>
         </p>
         <p>
           <FontAwesomeIcon icon={faComments} />
-          <span className={styles.caption}>{item.commentCount}</span>
+          <span className={styles.caption}>{commentCount}</span>
         </p>
       </div>
     </div>
