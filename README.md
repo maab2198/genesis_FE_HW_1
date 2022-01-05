@@ -14,3 +14,9 @@ Anyway it was very fun) thanks a lot
 
 # Note
 Get User Feed didn't work properly, so I used Get Trending Feed instead
+
+# To do
+
+- Video: add content for video => tracker, onFocus& onBlur realisation
+- App: issue with react memo
+- Styles: managing chaos
