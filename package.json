@@ -1,6 +1,10 @@
 {
   "name": "tiktuk",
-  "version": "0.1.1",
+  "repository": "github:maab2198/genesis_FE_HW_1",
+  "author": "maab2198",
+  "bugs": "https://github.com/maab2198/genesis_FE_HW_1/issues",
+  "homepage": "https://tiktuk.herokuapp.com/trend",
+  "version": "0.2.1",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
