@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-
-
 import styles from "./Avatar.module.css"
 
 import defaultImage from "./avatar.jpg"

@@ -37,7 +37,7 @@ describe("Theme", () => {
   })
 
   it("toggle theme className after btn click", () => {
-    const { container} = render(
+    const { container } = render(
       <ThemeProvider>
         <Theme>
           <p>child</p>
@@ -47,12 +47,10 @@ describe("Theme", () => {
 
     const button = screen.getByRole("button")
 
-  
     expect(container.firstChild.className).toContain("light-theme")
     userEvent.click(button)
     expect(container.firstChild.className).toContain("dark-theme")
     userEvent.click(button)
     expect(container.firstChild.className).toContain("light-theme")
-    
   })
 })

@@ -22,7 +22,7 @@ describe("Error", () => {
     const expectedValue = "message text"
     render(<Error message={expectedValue} />)
 
-    const errorElement = screen.getByText(expectedValue)
+    const errorElement = screen.queryByText(expectedValue)
 
     expect(errorElement).toBeInTheDocument()
   })
@@ -30,7 +30,7 @@ describe("Error", () => {
   it("render defauilt message text", () => {
     render(<Error />)
 
-    const errorElement = screen.getByText(/Some error occurred/i)
+    const errorElement = screen.queryByText(/Some error occurred/i)
 
     expect(errorElement).toBeInTheDocument()
   })

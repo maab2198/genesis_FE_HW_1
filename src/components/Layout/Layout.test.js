@@ -1,5 +1,5 @@
 import React from "react"
-import { render,screen} from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import Layout from "./Layout"
 
 describe("Layout", () => {
@@ -11,6 +11,6 @@ describe("Layout", () => {
       </Layout>
     )
 
-    expect(screen.getByText(childText)).toBeInTheDocument()
+    expect(screen.queryByText(childText)).toBeInTheDocument()
   })
 })

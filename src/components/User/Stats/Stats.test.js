@@ -3,52 +3,51 @@ import { render, screen } from "@testing-library/react"
 import Stats from "./Stats"
 
 const mockStats = {
- 
-    followingCount: "100",
-    followerCount: "110",
-    heartCount: "120",
-  
+  followingCount: "100",
+  followerCount: "110",
+  heartCount: "120",
 }
 
 describe("Stats", () => {
-    it("render list of 3 paragraph elements with 'stat-element' role", () => {
-        render(<Stats stats={mockStats} />)
-    
-        expect(screen.getAllByRole("stat-element").length).toEqual(3)
-      })
-  it("render following text", () => {
-   render(<Stats stats={mockStats} />)
+  it("render list of 3 paragraph elements with 'stat-element' role", () => {
+    render(<Stats stats={mockStats} />)
 
-    expect(screen.getByText(/following/i)).toBeInTheDocument()
+    expect(screen.queryAllByRole("stat-element").length).toEqual(3)
+  })
+  it("render following text", () => {
+    render(<Stats stats={mockStats} />)
+
+    expect(screen.queryByText(/following/i)).toBeInTheDocument()
   })
   it("render following count", () => {
     render(<Stats stats={mockStats} />)
+    const element = screen.getByTestId("following-count")
 
-    expect(screen.getByTestId("following-count")).toHaveTextContent(mockStats.followingCount)
+    expect(element).toHaveTextContent(mockStats.followingCount)
   })
   it("render followers text", () => {
-   render(<Stats stats={mockStats} />)
+    render(<Stats stats={mockStats} />)
 
-    expect(screen.getByText(/followers/i)).toBeInTheDocument()
+    expect(screen.queryByText(/followers/i)).toBeInTheDocument()
   })
 
   it("render followers count", () => {
     render(<Stats stats={mockStats} />)
+    const element = screen.getByTestId("follower-count")
 
-    expect(screen.getByTestId("follower-count")).toHaveTextContent(mockStats.followerCount)
+    expect(element).toHaveTextContent(mockStats.followerCount)
   })
 
   it("render likes text", () => {
     render(<Stats stats={mockStats} />)
 
-    expect(screen.getByText(/likes/i)).toBeTruthy()
+    expect(screen.queryByText(/likes/i)).toBeTruthy()
   })
 
   it("render likes count", () => {
     render(<Stats stats={mockStats} />)
+    const element = screen.getByTestId("heart-count")
 
-    expect(screen.getByTestId("heart-count")).toHaveTextContent(mockStats.heartCount)
+    expect(element).toHaveTextContent(mockStats.heartCount)
   })
-
-
 })

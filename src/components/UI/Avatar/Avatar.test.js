@@ -5,9 +5,8 @@ import Avatar from "./Avatar"
 describe("Avatar", () => {
   it("img alt value set from props", () => {
     render(<Avatar name="alt_value" />)
-    const imgElement = screen.getByAltText(/alt/i)
 
-    expect(imgElement).toBeInTheDocument()
+    expect(screen.queryByAltText(/alt/i)).toBeInTheDocument()
   })
 
   it("link href set from props", () => {
