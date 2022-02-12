@@ -21,9 +21,9 @@ describe("HashtagList", () => {
 
   it("render list of spans with tag className and #name as text", () => {
 
-    const { container , getByText} = render(<HashtagList hashtags={mockHashtags}/>)
-    expect(getByText("#" + mockHashtags[0].name)).toBeInTheDocument()
-    expect(getByText("#" + mockHashtags[1].name)).toBeInTheDocument()
+    const { container} = render(<HashtagList hashtags={mockHashtags}/>)
+    expect(screen.getByText("#" + mockHashtags[0].name)).toBeInTheDocument()
+    expect(screen.getByText("#" + mockHashtags[1].name)).toBeInTheDocument()
 
     expect( container.querySelectorAll('span.tag').length).toEqual(mockHashtags.length);
 

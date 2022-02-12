@@ -1,5 +1,5 @@
 import React from "react"
-import { render, screen, fireEvent,cleanup } from "@testing-library/react"
+import { render, screen, cleanup } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import Theme from "./Theme"
 import ThemeProvider from "../../store/ThemeProvider"
@@ -21,7 +21,7 @@ describe("Theme", () => {
   })
 
   it("button is available after click", () => {
-    const { getByRole } = render(
+    render(
       <ThemeProvider>
         <Theme>
           <p>child</p>
@@ -29,7 +29,7 @@ describe("Theme", () => {
       </ThemeProvider>
     )
 
-    const button = getByRole("button")
+    const button = screen.getByRole("button")
 
     userEvent.click(button)
 
@@ -37,7 +37,7 @@ describe("Theme", () => {
   })
 
   it("toggle theme className after btn click", () => {
-    const { container, getByRole } = render(
+    const { container} = render(
       <ThemeProvider>
         <Theme>
           <p>child</p>
@@ -45,7 +45,7 @@ describe("Theme", () => {
       </ThemeProvider>
     )
 
-    const button = getByRole("button")
+    const button = screen.getByRole("button")
 
   
     expect(container.firstChild.className).toContain("light-theme")
