@@ -4,10 +4,10 @@ import PropTypes from "prop-types"
 import useHttp from "../../hooks/use-http"
 import { getUserInfo } from "../../lib/api"
 
-import LoadingSpinner from "../UI/LoadingSpinner"
-import Stats from "./Stats"
-import Avatar from "../UI/Avatar"
-import Error from "../UI/Error"
+import Stats from "../Stats/Stats"
+import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner"
+import Avatar from "../UI/Avatar/Avatar"
+import Error from "../UI/Error/Error"
 
 import styles from "./UserInfo.module.css"
 
@@ -37,7 +37,12 @@ const UserInfo = ({ userId }) => {
         {userInfo.stats && <Stats stats={userInfo.stats} />}
 
         <div className={styles.avatar__container}>
-          <Avatar size="med" src={userInfo.user.avatarMedium} link={userId} />
+          <Avatar
+            size="med"
+            src={userInfo.user.avatarMedium}
+            link={userId}
+            name={userId}
+          />
         </div>
 
         <div className={styles.btn__container}>

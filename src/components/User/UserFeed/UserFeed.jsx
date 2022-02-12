@@ -1,10 +1,10 @@
 import React, { useEffect } from "react"
 
-import useHttp from "../../hooks/use-http"
-import { getTrendingFeed } from "../../lib/api"
+import useHttp from "../../../hooks/use-http"
+import { getTrendingFeed } from "../../../lib/api"
 
 import UserFeedItem from "./UserFeedItem"
-import Error from "../UI/Error"
+import Error from "../../UI/Error/Error"
 
 import styles from "./UserFeed.module.css"
 

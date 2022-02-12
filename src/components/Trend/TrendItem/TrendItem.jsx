@@ -9,9 +9,9 @@ import {
   faMusic,
 } from "@fortawesome/free-solid-svg-icons"
 
-import Author from "./Author"
-import HashtagList from "./HashtagList"
-import Video from "../Video/Video"
+import Author from "../Author/Author"
+import HashtagList from "../HashtagList/HashtagList"
+import Video from "../../Video/Video"
 
 import styles from "./TrendItem.module.css"
 
@@ -27,7 +27,7 @@ const TrendItem = ({
     diggCount,
     shareCount,
     commentCount,
-  }
+  },
 }) => (
   <li className={styles["trend-item"]}>
     <div
@@ -49,7 +49,7 @@ const TrendItem = ({
         <span className={styles.caption}>{musicMeta.musicName}</span>
       </p>
 
-      {hashtags && hashtags.length && <HashtagList hashtags={hashtags} />}
+      {hashtags.length > 0 && <HashtagList hashtags={hashtags} />}
 
       <div className={styles.stats}>
         <p>

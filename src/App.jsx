@@ -1,7 +1,7 @@
 import React, { Suspense } from "react"
 import { Route, Routes, Navigate } from "react-router-dom"
 
-import LoadingSpinner from "./components/UI/LoadingSpinner"
+import LoadingSpinner from "./components/UI/LoadingSpinner/LoadingSpinner"
 import TrendPage from "./pages/TrendPage"
 import UserPage from "./pages/UserPage"
 
