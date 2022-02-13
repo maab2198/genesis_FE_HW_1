@@ -8,10 +8,10 @@ const item = {
   videoUrl: "",
   authorMeta: {},
   text: "some text",
-  musicMeta: {},
+  musicMeta: {musicName: "musicName"},
   hashtags: ["tag1", "tag2"],
-  diggCount: 100,
-  shareCount: 100,
+  diggCount: 20,
+  shareCount: 30,
   commentCount: 100,
 }
 
@@ -37,17 +37,10 @@ describe("TrendItem", () => {
     const expectedSrc = item.covers.default
     render(<TrendItem item={item} />)
     const image = screen.getByRole("img")
-    screen.debug()
-    expect(image.hasAttribute("src", expectedSrc)).toBeTruthy()
+   
+    expect(image).toHaveAttribute("src",expectedSrc)
   })
 
-  it("renders img  with covers.default as src", () => {
-    const expectedSrc = "sjfgjhfgg"
-    render(<TrendItem item={item} />)
-    const image = screen.getByRole("img")
-
-    expect(image.hasAttribute("src", expectedSrc)).toBeTruthy()
-  })
 })
 
 describe("TrendItem: Components", () => {
@@ -68,5 +61,34 @@ describe("TrendItem: Components", () => {
     item.hashtags = []
     render(<TrendItem item={item} />)
     expect(screen.queryByText(/HashtagList/i)).toBeNull()
+  })
+})
+
+
+describe("TrendItem: Stats", () => {
+  it("renders music name", () => {
+    render(<TrendItem item={item} />)
+    const element = screen.getByTestId("musicName")
+
+    expect(element).toHaveTextContent(item.musicMeta.musicName)
+  })
+  it("renders digg (likes) count", () => {
+    render(<TrendItem item={item} />)
+    const element = screen.getByTestId("diggCount")
+
+    expect(element).toHaveTextContent(item.diggCount)
+  })
+  it("renders share count", () => {
+    render(<TrendItem item={item} />)
+    const element = screen.getByTestId("shareCount")
+
+    expect(element).toHaveTextContent(item.shareCount)
+  })
+
+  it("renders comment count", () => {
+    render(<TrendItem item={item} />)
+    const element = screen.getByTestId("commentCount")
+
+    expect(element).toHaveTextContent(item.commentCount)
   })
 })

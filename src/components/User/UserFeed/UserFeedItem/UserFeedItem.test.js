@@ -11,6 +11,6 @@ describe("UserFeedItem", () => {
   it("renders Video component if item is not set", () => {
     render(<UserFeedItem />)
 
-    expect(screen.queryByText(defaultUrl)).toBeInTheDocument()
+    expect(screen.queryByText(defaultUrl)).toBeTruthy()
   })
 })
