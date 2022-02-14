@@ -28,18 +28,15 @@ describe("App", () => {
   })
 
   it("redirect to user page", () => {
-    mockRender(<App />, {route: `/user/${userID}`})
+    mockRender(<App />, { route: `/user/${userID}` })
 
     expect(screen.getByText(userID)).toBeInTheDocument()
     expect(window.location.pathname).toEqual(`/user/${userID}`)
-
   })
-  
-  it('render trend page for bad route value', () => {
-    mockRender(<App />, {route: '/something-that-does-not-match'})   
+
+  it("render trend page for bad route value", () => {
+    mockRender(<App />, { route: "/something-that-does-not-match" })
     expect(screen.getByText(/TrendPage/i)).toBeInTheDocument()
     expect(window.location.pathname).toEqual("/trend")
   })
-
-
 })

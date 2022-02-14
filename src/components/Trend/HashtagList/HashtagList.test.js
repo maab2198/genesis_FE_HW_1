@@ -22,6 +22,7 @@ describe("HashtagList", () => {
 
   it("render list of spans with tag className and #name as text", () => {
     const { container } = render(<HashtagList hashtags={mockHashtags} />)
+    screen.debug()
     expect(screen.queryByText("#" + mockHashtags[0].name)).toBeInTheDocument()
     expect(screen.queryByText("#" + mockHashtags[1].name)).toBeInTheDocument()
 

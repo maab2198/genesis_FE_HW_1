@@ -51,7 +51,7 @@ const TrendItem = ({
         </span>
       </p>
 
-      {hashtags.length > 0 && <HashtagList hashtags={hashtags} />}
+      {hashtags && hashtags.length > 0 && <HashtagList hashtags={hashtags} />}
 
       <div className={styles.stats}>
         <p>

@@ -12,7 +12,7 @@ function App() {
         <Route path="/" element={<Navigate to="/trend" />} />
         <Route path="/trend" element={<TrendPage />} />
         <Route path="/user/:userId" element={<UserPage />} />
-        <Route path="*" element={<Navigate to="/trend" />}  />
+        <Route path="*" element={<Navigate to="/trend" />} />
       </Routes>
     </Suspense>
   )

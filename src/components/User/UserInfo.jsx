@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import useHttp from "../../hooks/use-http"
 import { getUserInfo } from "../../lib/api"
 
-import Stats from "../Stats/Stats"
+import Stats from "./Stats/Stats"
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner"
 import Avatar from "../UI/Avatar/Avatar"
 import Error from "../UI/Error/Error"

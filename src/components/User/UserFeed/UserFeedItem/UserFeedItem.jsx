@@ -9,14 +9,14 @@ const UserFeedItem = ({ item }) => (
   </li>
 )
 
-UserFeedItem.deful = {
+UserFeedItem.defaultProps = {
   item: {
     videoUrl:
       "https://www.tiktok.com/@tiktok/video/7039055257044815110?is_from_webapp=1&sender_device=pc&web_id7046037117986915845",
   },
 }
 
-UserFeedItem.defaultProps = {
+UserFeedItem.propTypes = {
   item: PropTypes.objectOf(PropTypes.oneOfType[PropTypes.string]),
 }
 

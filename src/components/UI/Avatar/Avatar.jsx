@@ -6,7 +6,6 @@ import styles from "./Avatar.module.css"
 
 import defaultImage from "./avatar.jpg"
 
-
 const Avatar = ({ link, size, src, name }) => {
   const imgSize = size === "sm" ? "60px" : "120px"
 

@@ -2,17 +2,21 @@ import feed from "../assets/json/mockData/feed.json"
 import * as userInfo from "../assets/json/mockData/user-info.json"
 
 const PATH = "https://tiktok33.p.rapidapi.com"
-const TESTMODE = true
+const TESTMODE = false
 const HEADERS = {
   "x-rapidapi-host": "tiktok33.p.rapidapi.com",
   "x-rapidapi-key": "e354906d46mshe8a86828f615be6p15a959jsn223d667b7313",
 }
 
+const PATH_FEED = "https://elves-34f89-default-rtdb.firebaseio.com/feed.json"
+const PATH_USER =
+  "https://elves-34f89-default-rtdb.firebaseio.com/userInfo.json"
+
 export async function getTrendingFeed() {
   let trendingFeed
   if (!TESTMODE) {
-    const response = await fetch(`${PATH}/trending/feed`, {
-      headers: HEADERS,
+    const response = await fetch(PATH_FEED, {
+      // headers: HEADERS,
     })
 
     trendingFeed = await response.json()
@@ -27,14 +31,18 @@ export async function getTrendingFeed() {
   } else {
     trendingFeed = feed
   }
+  console.log(trendingFeed)
   return trendingFeed
 }
 
 export async function getUserInfo(userId) {
+  if (!userId) {
+    throw new Error("UserId not valid")
+  }
   let userData
   if (!TESTMODE) {
-    const response = await fetch(`${PATH}/user/info/${userId.slice(1)}`, {
-      headers: HEADERS,
+    const response = await fetch(PATH_USER, {
+      // headers: HEADERS,
     })
     userData = await response.json()
 

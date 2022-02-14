@@ -12,7 +12,7 @@ describe("Stats", () => {
   it("render list of 3 paragraph elements with 'stat-element' role", () => {
     render(<Stats stats={mockStats} />)
 
-    expect(screen.queryAllByRole("stat-element").length).toEqual(3)
+    expect(screen.queryAllByTestId("stat-element").length).toEqual(3)
   })
   it("render following text", () => {
     render(<Stats stats={mockStats} />)

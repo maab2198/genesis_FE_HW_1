@@ -39,7 +39,7 @@ describe("Author", () => {
   })
 
   /// TODO: fix strange redirect
-  
+
   it("render Avatar Component", async () => {
     render(
       <MemoryRouter initialEntries={["/trend"]}>
