@@ -8,7 +8,7 @@ const item = {
   videoUrl: "",
   authorMeta: {},
   text: "some text",
-  musicMeta: {musicName: "musicName"},
+  musicMeta: { musicName: "musicName" },
   hashtags: ["tag1", "tag2"],
   diggCount: 20,
   shareCount: 30,
@@ -37,10 +37,9 @@ describe("TrendItem", () => {
     const expectedSrc = item.covers.default
     render(<TrendItem item={item} />)
     const image = screen.getByRole("img")
-   
-    expect(image).toHaveAttribute("src",expectedSrc)
-  })
 
+    expect(image).toHaveAttribute("src", expectedSrc)
+  })
 })
 
 describe("TrendItem: Components", () => {
@@ -63,7 +62,6 @@ describe("TrendItem: Components", () => {
     expect(screen.queryByText(/HashtagList/i)).toBeNull()
   })
 })
-
 
 describe("TrendItem: Stats", () => {
   it("renders music name", () => {

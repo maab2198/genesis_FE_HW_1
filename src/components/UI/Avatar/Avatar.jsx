@@ -1,15 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Link } from "react-router-dom"
 
 import styles from "./Avatar.module.css"
 
 import defaultImage from "./avatar.jpg"
 
+
 const Avatar = ({ link, size, src, name }) => {
   const imgSize = size === "sm" ? "60px" : "120px"
 
   return (
-    <a className="avatar-anchor" href={`/user/${link}`}>
+    <Link className="avatar-anchor" to={`/user/${link}`} replace>
       <span
         className={styles.avatar__wrapper}
         style={{ width: imgSize, height: imgSize }}
@@ -22,7 +24,7 @@ const Avatar = ({ link, size, src, name }) => {
           height={imgSize}
         />
       </span>
-    </a>
+    </Link>
   )
 }
 

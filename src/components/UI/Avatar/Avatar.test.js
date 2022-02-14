@@ -1,10 +1,17 @@
 import React from "react"
-import { render, screen } from "@testing-library/react"
+import { cleanup, render, screen } from "@testing-library/react"
 import Avatar from "./Avatar"
+import { MemoryRouter } from "react-router-dom"
+
+afterEach(cleanup)
 
 describe("Avatar", () => {
   it("img alt value set from props", () => {
-    render(<Avatar name="alt_value" />)
+    render(
+      <MemoryRouter>
+        <Avatar name="alt_value" />
+      </MemoryRouter>
+    )
 
     expect(screen.queryByAltText(/alt/i)).toBeInTheDocument()
   })
@@ -12,16 +19,24 @@ describe("Avatar", () => {
   it("link href set from props", () => {
     const testValue = "userId"
 
-    render(<Avatar link={testValue} />)
+    render(
+      <MemoryRouter>
+        <Avatar link={testValue} />
+      </MemoryRouter>
+    )
 
     const linkElement = screen.getByRole("link")
-    expect(linkElement).toHaveAttribute("href", "/user/" + testValue)
+    expect(linkElement).toHaveAttribute("href", `/user/${testValue}`)
   })
 
   it("render correct src", async () => {
     const expectedSource = "src"
 
-    render(<Avatar src={expectedSource} name="alt" />)
+    render(
+      <MemoryRouter>
+        <Avatar src={expectedSource} name="alt" />{" "}
+      </MemoryRouter>
+    )
 
     const imgElement = screen.getByRole("img")
 
@@ -29,7 +44,11 @@ describe("Avatar", () => {
   })
 
   it("render default image if src is empty", async () => {
-    render(<Avatar src="" name="alt" />)
+    render(
+      <MemoryRouter>
+        <Avatar src="" name="alt" />{" "}
+      </MemoryRouter>
+    )
 
     const imgElement = screen.getByRole("img")
 
@@ -39,7 +58,11 @@ describe("Avatar", () => {
   it("render image with width 60px ", () => {
     const expectedWidth = "60px"
 
-    render(<Avatar size="sm" name="alt_value" />)
+    render(
+      <MemoryRouter>
+        <Avatar size="sm" name="alt_value" />
+      </MemoryRouter>
+    )
 
     const imgElement = screen.getByRole("img")
 
@@ -48,7 +71,11 @@ describe("Avatar", () => {
 
   it("render image with width 120px ", () => {
     const expectedWidth = "120px"
-    render(<Avatar size="md" name="alt_value" />)
+    render(
+      <MemoryRouter>
+        <Avatar size="md" name="alt_value" />
+      </MemoryRouter>
+    )
 
     const imgElement = screen.getByRole("img")
 
