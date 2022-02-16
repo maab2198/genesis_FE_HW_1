@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
-import { render, screen, cleanup } from "@testing-library/react"
+import { render, screen} from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
 import Author from "./Author"
@@ -16,7 +16,7 @@ const author = {
 
 jest.mock("../../UI/Avatar/Avatar", () => () => <div>Avatar</div>)
 
-afterEach(cleanup)
+
 
 describe("Author", () => {
   it("render the component with inner content ", () => {

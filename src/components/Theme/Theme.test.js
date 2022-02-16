@@ -1,10 +1,10 @@
 import React from "react"
-import { render, screen, cleanup } from "@testing-library/react"
+import { render, screen} from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import Theme from "./Theme"
 import ThemeProvider from "../../store/ThemeProvider"
 
-afterEach(cleanup)
+
 
 describe("Theme", () => {
   it("rended with light-theme className", () => {

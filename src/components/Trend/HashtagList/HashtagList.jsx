@@ -1,13 +1,9 @@
-import React, { useEffect } from "react"
+import React from "react"
 import PropTypes, { object } from "prop-types"
 
 import styles from "./HashtagList.module.css"
 
 const HashtagList = ({ hashtags }) => {
-  useEffect(() => {
-    console.log(hashtags)
-  }, [hashtags])
-
   if (!hashtags || hashtags.length <= 0 || !hashtags[0]) {
     return null
   }

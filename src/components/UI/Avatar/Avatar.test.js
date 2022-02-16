@@ -1,9 +1,9 @@
 import React from "react"
-import { cleanup, render, screen } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import Avatar from "./Avatar"
 import { MemoryRouter } from "react-router-dom"
 
-afterEach(cleanup)
+
 
 describe("Avatar", () => {
   it("img alt value set from props", () => {

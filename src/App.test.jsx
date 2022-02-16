@@ -1,5 +1,5 @@
-import { render, screen, cleanup } from "@testing-library/react"
-import { createMemoryHistory } from "history"
+import { render, screen} from "@testing-library/react"
+
 import React from "react"
 
 import { BrowserRouter as Router } from "react-router-dom"
@@ -11,7 +11,6 @@ const userID = "someuser"
 jest.mock("./pages/TrendPage", () => () => <div>TrendPage</div>)
 jest.mock("./pages/UserPage", () => () => <div>{userID}</div>)
 
-afterEach(cleanup)
 
 const mockRender = (ui, { route = "/" } = {}) => {
   window.history.pushState({}, "Test page", route)
