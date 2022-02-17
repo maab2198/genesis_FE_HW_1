@@ -28,6 +28,7 @@ const UserFeed = () => {
     <ul className={styles.grid}>
       {status !== "pending" &&
         userFeed.map((item) => <UserFeedItem item={item} key={item.id} />)}
+      {status == "pending" && <h2>Loading ....</h2>}
     </ul>
   )
 }
