@@ -1,10 +1,10 @@
 import React, { useEffect } from "react"
 
-import useHttp from "../../hooks/use-http"
-import { getTrendingFeed } from "../../lib/api"
+import useHttp from "../../../hooks/use-http"
+import { getTrendingFeed } from "../../../lib/api"
 
-import UserFeedItem from "./UserFeedItem"
-import Error from "../UI/Error"
+import UserFeedItem from "./UserFeedItem/UserFeedItem"
+import Error from "../../UI/Error/Error"
 
 import styles from "./UserFeed.module.css"
 
@@ -28,6 +28,7 @@ const UserFeed = () => {
     <ul className={styles.grid}>
       {status !== "pending" &&
         userFeed.map((item) => <UserFeedItem item={item} key={item.id} />)}
+      {status == "pending" && <h2>Loading ....</h2>}
     </ul>
   )
 }

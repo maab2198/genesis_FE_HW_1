@@ -9,9 +9,9 @@ import {
   faMusic,
 } from "@fortawesome/free-solid-svg-icons"
 
-import Author from "./Author"
-import HashtagList from "./HashtagList"
-import Video from "../Video/Video"
+import Author from "../Author/Author"
+import HashtagList from "../HashtagList/HashtagList"
+import Video from "../../Video/Video"
 
 import styles from "./TrendItem.module.css"
 
@@ -27,7 +27,7 @@ const TrendItem = ({
     diggCount,
     shareCount,
     commentCount,
-  }
+  },
 }) => (
   <li className={styles["trend-item"]}>
     <div
@@ -46,23 +46,31 @@ const TrendItem = ({
 
       <p>
         <FontAwesomeIcon icon={faMusic} />
-        <span className={styles.caption}>{musicMeta.musicName}</span>
+        <span data-testid="musicName" className={styles.caption}>
+          {musicMeta.musicName}
+        </span>
       </p>
 
-      {hashtags && hashtags.length && <HashtagList hashtags={hashtags} />}
+      {hashtags && hashtags.length > 0 && <HashtagList hashtags={hashtags} />}
 
       <div className={styles.stats}>
         <p>
           <FontAwesomeIcon icon={faHeart} />
-          <span className={styles.caption}>{diggCount}</span>
+          <span data-testid="diggCount" className={styles.caption}>
+            {diggCount}
+          </span>
         </p>
         <p>
           <FontAwesomeIcon icon={faShare} />
-          <span className={styles.caption}>{shareCount}</span>
+          <span data-testid="shareCount" className={styles.caption}>
+            {shareCount}
+          </span>
         </p>
         <p>
           <FontAwesomeIcon icon={faComments} />
-          <span className={styles.caption}>{commentCount}</span>
+          <span data-testid="commentCount" className={styles.caption}>
+            {commentCount}
+          </span>
         </p>
       </div>
     </div>

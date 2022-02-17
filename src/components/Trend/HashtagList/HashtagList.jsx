@@ -4,7 +4,7 @@ import PropTypes, { object } from "prop-types"
 import styles from "./HashtagList.module.css"
 
 const HashtagList = ({ hashtags }) => {
-  if (!hashtags || !hashtags.length) {
+  if (!hashtags || hashtags.length <= 0 || !hashtags[0]) {
     return null
   }
 
@@ -20,7 +20,7 @@ const HashtagList = ({ hashtags }) => {
 }
 
 HashtagList.defaultProps = {
-  hashtags: [],
+  hashtags: [{}],
 }
 
 HashtagList.propTypes = {

@@ -1,12 +1,14 @@
 import React, { useEffect } from "react"
 
-import TrendItem from "./TrendItem"
-import LoadingSpinner from "../UI/LoadingSpinner"
-import styles from "./TrendList.module.css"
-import useHttp from "../../hooks/use-http"
-import Error from "../UI/Error"
+import TrendItem from "../TrendItem/TrendItem"
+import LoadingSpinner from "../../UI/LoadingSpinner/LoadingSpinner"
+import Error from "../../UI/Error/Error"
 
-import { getTrendingFeed } from "../../lib/api"
+import useHttp from "../../../hooks/use-http"
+
+import { getTrendingFeed } from "../../../lib/api"
+
+import styles from "./TrendList.module.css"
 
 const TrendList = () => {
   const {

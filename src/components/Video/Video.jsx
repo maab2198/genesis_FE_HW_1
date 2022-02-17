@@ -1,10 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import styles from "./Video.module.css"
+
 const Video = ({ videoUrl }) => (
   <video
     controls=""
     name="Video Name"
+    className={styles.video}
     src={videoUrl}
     type="video/mp4"
     video="100%"

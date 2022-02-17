@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../components/Layout/Layout"
-import TrendList from "../components/Trend/TrendList"
+import TrendList from "../components/Trend/TrendList/TrendList"
 
 export default function TrendPage() {
   return (
