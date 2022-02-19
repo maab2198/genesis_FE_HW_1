@@ -9,8 +9,6 @@ jest.mock("../../UI/LoadingSpinner/LoadingSpinner", () => () => (
 jest.mock("../TrendItem/TrendItem", () => () => <div>item</div>)
 jest.mock("../../../hooks/use-http", () => jest.fn())
 
-
-
 describe("TrendList", () => {
   it("render loading spinner", () => {
     useHttp.mockImplementationOnce(() => ({

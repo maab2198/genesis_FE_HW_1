@@ -4,8 +4,10 @@ import userInfo from "../assets/json/mockData/user-info.json"
 import userFeed from "../assets/json/mockData/feed.json"
 
 const PATH_FEED = "https://elves-34f89-default-rtdb.firebaseio.com/feed.json"
-const PATH_USER = "https://elves-34f89-default-rtdb.firebaseio.com/userInfo.json"
-const PATH_USER_FEED = "https://elves-34f89-default-rtdb.firebaseio.com/feed.json"
+const PATH_USER =
+  "https://elves-34f89-default-rtdb.firebaseio.com/userInfo.json"
+const PATH_USER_FEED =
+  "https://elves-34f89-default-rtdb.firebaseio.com/feed.json"
 
 describe("Fetch: Get Trending Feed", () => {
   it("fetch was successful  ", async () => {
@@ -126,7 +128,6 @@ describe("Fetch: Get User Info", () => {
     }
     expect(fetchMock).not.toHaveBeenCalled()
   })
-
 })
 
 describe("Fetch: Get User Feed", () => {
@@ -162,7 +163,7 @@ describe("Fetch: Get User Feed", () => {
     }
     expect(fetchMock).toHaveBeenCalledWith(PATH_USER_FEED)
   })
-// TODO почему or не считаеться как if
+  // TODO почему or не считаеться как if
   it("fetch works if feed array is undefined ", async () => {
     const fetchMock = jest.spyOn(global, "fetch").mockImplementation(() =>
       Promise.resolve({

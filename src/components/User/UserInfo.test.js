@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 
 import UserInfo from "./UserInfo"
-import * as userData from "../../assets/json/mockData/user-info.json" 
+import * as userData from "../../assets/json/mockData/user-info.json"
 import useHttp from "../../hooks/use-http"
 
 jest.mock("../UI/LoadingSpinner/LoadingSpinner", () => () => (
@@ -9,8 +9,6 @@ jest.mock("../UI/LoadingSpinner/LoadingSpinner", () => () => (
 ))
 jest.mock("../UI/Avatar/Avatar", () => () => <div>Avatar</div>)
 jest.mock("../../hooks/use-http", () => jest.fn())
-
-
 
 describe("UserInfo", () => {
   it("render loading spinner", () => {
@@ -20,7 +18,7 @@ describe("UserInfo", () => {
       status: "pending",
       data: userData,
     }))
-    render(<UserInfo userId = "id"/>)
+    render(<UserInfo userId="id" />)
 
     expect(screen.getByText(/LoadingSpinner/i)).toBeTruthy()
   })
@@ -30,9 +28,9 @@ describe("UserInfo", () => {
       sendRequest: () => {},
       error: null,
       status: "completed",
-      data:  userData,
+      data: userData,
     }))
-    render(<UserInfo userId = "id"/>)
+    render(<UserInfo userId="id" />)
 
     expect(await screen.findByText(/Avatar/)).toBeTruthy()
   })
@@ -44,7 +42,7 @@ describe("UserInfo", () => {
       status: "complited",
       data: userData,
     }))
-    render(<UserInfo userId = "id"/>)
+    render(<UserInfo userId="id" />)
 
     expect(await screen.findByText(/error text/)).toBeTruthy()
   })

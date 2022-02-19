@@ -3,8 +3,6 @@ import { render, screen } from "@testing-library/react"
 import Avatar from "./Avatar"
 import { MemoryRouter } from "react-router-dom"
 
-
-
 describe("Avatar", () => {
   it("img alt value set from props", () => {
     render(

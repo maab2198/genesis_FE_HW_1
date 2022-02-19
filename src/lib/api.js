@@ -14,23 +14,24 @@ const HEADERS = {
 const PATH_FEED = "https://elves-34f89-default-rtdb.firebaseio.com/feed.json"
 const PATH_USER =
   "https://elves-34f89-default-rtdb.firebaseio.com/userInfo.json"
-const PATH_USER_FEED = "https://elves-34f89-default-rtdb.firebaseio.com/feed.json"
+const PATH_USER_FEED =
+  "https://elves-34f89-default-rtdb.firebaseio.com/feed.json"
 
 export async function getTrendingFeed() {
   let trendingFeed
 
-    const response = await fetch(PATH_FEED)
+  const response = await fetch(PATH_FEED)
 
-    trendingFeed = await response.json()
+  trendingFeed = await response.json()
 
-    if (!response.ok) {
-      throw new Error(trendingFeed.message || "Could not fetch trending feed.")
-    }
+  if (!response.ok) {
+    throw new Error(trendingFeed.message || "Could not fetch trending feed.")
+  }
 
-    if (!trendingFeed || !trendingFeed.length) {
-      throw new Error("Feed is empty")
-    }
-  
+  if (!trendingFeed || !trendingFeed.length) {
+    throw new Error("Feed is empty")
+  }
+
   return trendingFeed
 }
 
@@ -40,16 +41,16 @@ export async function getUserInfo(userId) {
   }
   let userData
 
-    const response = await fetch(PATH_USER)
-    userData = await response.json()
+  const response = await fetch(PATH_USER)
+  userData = await response.json()
 
-    if (!response.ok) {
-      throw new Error(userData.message || "Could not fetch user info.")
-    }
+  if (!response.ok) {
+    throw new Error(userData.message || "Could not fetch user info.")
+  }
 
-    if (!userData || !userData.user || !userData.stats) {
-      throw new Error("User info is empty")
-    }
+  if (!userData || !userData.user || !userData.stats) {
+    throw new Error("User info is empty")
+  }
 
   return userData
 }

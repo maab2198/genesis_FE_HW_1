@@ -3,11 +3,8 @@ import UserFeed from "./UserFeed"
 
 import useHttp from "../../../hooks/use-http"
 
-
 jest.mock("./UserFeedItem/UserFeedItem", () => () => <div>item</div>)
 jest.mock("../../../hooks/use-http", () => jest.fn())
-
-
 
 describe("UserFeed", () => {
   it("render loading spinner", () => {
@@ -19,8 +16,7 @@ describe("UserFeed", () => {
     }))
     render(<UserFeed />)
 
-
-  expect(screen.getByText(/Loading/i)).toBeTruthy()
+    expect(screen.getByText(/Loading/i)).toBeTruthy()
   })
 
   it("render list of items", async () => {

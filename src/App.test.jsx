@@ -1,4 +1,4 @@
-import { render, screen} from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 
 import React from "react"
 
@@ -10,7 +10,6 @@ import App from "./App"
 const userID = "someuser"
 jest.mock("./pages/TrendPage", () => () => <div>TrendPage</div>)
 jest.mock("./pages/UserPage", () => () => <div>{userID}</div>)
-
 
 const mockRender = (ui, { route = "/" } = {}) => {
   window.history.pushState({}, "Test page", route)
