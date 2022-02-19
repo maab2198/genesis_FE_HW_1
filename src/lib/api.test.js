@@ -3,8 +3,7 @@ import feed from "../assets/json/mockData/feed.json"
 import userInfo from "../assets/json/mockData/user-info.json"
 import userFeed from "../assets/json/mockData/feed.json"
 
-const {PATH_FEED,PATH_USER, PATH_USER_FEED } = process.env;
-
+const { REACT_APP_FEED, REACT_APP_USER_INFO, REACT_APP_USER_FEED } = process.env
 
 describe("Fetch: Get Trending Feed", () => {
   it("fetch was successful  ", async () => {
@@ -19,7 +18,7 @@ describe("Fetch: Get Trending Feed", () => {
 
     expect(Array.isArray(json)).toEqual(true)
 
-    expect(fetchMock).toHaveBeenCalledWith(PATH_FEED)
+    expect(fetchMock).toHaveBeenCalledWith(REACT_APP_FEED)
     expect(json.length).toEqual(feed.length)
   })
   it("fetch works if feed array is empty ", async () => {
@@ -37,7 +36,7 @@ describe("Fetch: Get Trending Feed", () => {
 
       expect(message).toContain("empty")
     }
-    expect(fetchMock).toHaveBeenCalledWith(PATH_FEED)
+    expect(fetchMock).toHaveBeenCalledWith(REACT_APP_FEED)
   })
   it("fetch was NOT successful (status NOT in the range 200-299) ", async () => {
     const fetchMock = jest.spyOn(global, "fetch").mockImplementation(() =>
@@ -54,7 +53,7 @@ describe("Fetch: Get Trending Feed", () => {
 
       expect(message).toBeTruthy()
     }
-    expect(fetchMock).toHaveBeenCalledWith(PATH_FEED)
+    expect(fetchMock).toHaveBeenCalledWith(REACT_APP_FEED)
   })
 })
 
@@ -71,7 +70,7 @@ describe("Fetch: Get User Info", () => {
 
     expect(json instanceof Object).toEqual(true)
 
-    expect(fetchMock).toHaveBeenCalledWith(PATH_USER)
+    expect(fetchMock).toHaveBeenCalledWith(REACT_APP_USER_INFO)
     expect(json.length).toEqual(userInfo.length)
   })
   it("fetch works if user info object is empty ", async () => {
@@ -89,7 +88,7 @@ describe("Fetch: Get User Info", () => {
 
       expect(message).toContain("empty")
     }
-    expect(fetchMock).toHaveBeenCalledWith(PATH_USER)
+    expect(fetchMock).toHaveBeenCalledWith(REACT_APP_USER_INFO)
   })
   it("fetch was NOT successful (status NOT in the range 200-299) ", async () => {
     const fetchMock = jest.spyOn(global, "fetch").mockImplementation(() =>
@@ -106,7 +105,7 @@ describe("Fetch: Get User Info", () => {
 
       expect(message).toBeTruthy()
     }
-    expect(fetchMock).toHaveBeenCalledWith(PATH_USER)
+    expect(fetchMock).toHaveBeenCalledWith(REACT_APP_USER_INFO)
   })
   it("fetch was NOT successful, userId is falsy ", async () => {
     const fetchMock = jest.spyOn(global, "fetch").mockImplementation(() =>
@@ -140,7 +139,7 @@ describe("Fetch: Get User Feed", () => {
 
     expect(Array.isArray(json)).toEqual(true)
 
-    expect(fetchMock).toHaveBeenCalledWith(PATH_USER_FEED)
+    expect(fetchMock).toHaveBeenCalledWith(REACT_APP_USER_FEED)
     expect(json.length).toEqual(userFeed.length)
   })
   it("fetch works if feed array is empty ", async () => {
@@ -158,7 +157,7 @@ describe("Fetch: Get User Feed", () => {
 
       expect(message).toContain("empty")
     }
-    expect(fetchMock).toHaveBeenCalledWith(PATH_USER_FEED)
+    expect(fetchMock).toHaveBeenCalledWith(REACT_APP_USER_FEED)
   })
   // TODO почему or не считаеться как if
   it("fetch works if feed array is undefined ", async () => {
@@ -176,7 +175,7 @@ describe("Fetch: Get User Feed", () => {
 
       expect(message).toContain("empty")
     }
-    expect(fetchMock).toHaveBeenCalledWith(PATH_USER_FEED)
+    expect(fetchMock).toHaveBeenCalledWith(REACT_APP_USER_FEED)
   })
   it("fetch was NOT successful (status NOT in the range 200-299) ", async () => {
     const fetchMock = jest.spyOn(global, "fetch").mockImplementation(() =>
@@ -193,6 +192,6 @@ describe("Fetch: Get User Feed", () => {
 
       expect(message).toBeTruthy()
     }
-    expect(fetchMock).toHaveBeenCalledWith(PATH_USER_FEED)
+    expect(fetchMock).toHaveBeenCalledWith(REACT_APP_USER_FEED)
   })
 })

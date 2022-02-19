@@ -1,11 +1,9 @@
-const {PATH_FEED,PATH_USER, PATH_USER_FEED } = process.env;
+const { REACT_APP_FEED, REACT_APP_USER_INFO, REACT_APP_USER_FEED } = process.env
 
 export async function getTrendingFeed() {
-  let trendingFeed
+  const response = await fetch(REACT_APP_FEED)
 
-  const response = await fetch(PATH_FEED)
-
-  trendingFeed = await response.json()
+  const trendingFeed = await response.json()
 
   if (!response.ok) {
     throw new Error(trendingFeed.message || "Could not fetch trending feed.")
@@ -22,10 +20,9 @@ export async function getUserInfo(userId) {
   if (!userId) {
     throw new Error("UserId not valid")
   }
-  let userData
 
-  const response = await fetch(PATH_USER)
-  userData = await response.json()
+  const response = await fetch(REACT_APP_USER_INFO)
+  const userData = await response.json()
 
   if (!response.ok) {
     throw new Error(userData.message || "Could not fetch user info.")
@@ -39,7 +36,11 @@ export async function getUserInfo(userId) {
 }
 
 export async function getUserFeed(userId) {
-  const response = await fetch(PATH_USER_FEED)
+  if (!userId) {
+    throw new Error("UserId not valid")
+  }
+
+  const response = await fetch(REACT_APP_USER_FEED)
 
   const userFeed = await response.json()
 

@@ -2,13 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import styles from "./Video.module.css"
+import mockVideo from "../../assets/video/mock_video.mp4"
 
 const Video = ({ videoUrl }) => (
   <video
     controls=""
     name="Video Name"
     className={styles.video}
-    src={videoUrl}
+    src={mockVideo || videoUrl  }
     type="video/mp4"
     video="100%"
     onMouseOver={(event) => event.target.play()}
