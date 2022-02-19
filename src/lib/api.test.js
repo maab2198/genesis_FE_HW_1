@@ -3,11 +3,8 @@ import feed from "../assets/json/mockData/feed.json"
 import userInfo from "../assets/json/mockData/user-info.json"
 import userFeed from "../assets/json/mockData/feed.json"
 
-const PATH_FEED = "https://elves-34f89-default-rtdb.firebaseio.com/feed.json"
-const PATH_USER =
-  "https://elves-34f89-default-rtdb.firebaseio.com/userInfo.json"
-const PATH_USER_FEED =
-  "https://elves-34f89-default-rtdb.firebaseio.com/feed.json"
+const {PATH_FEED,PATH_USER, PATH_USER_FEED } = process.env;
+
 
 describe("Fetch: Get Trending Feed", () => {
   it("fetch was successful  ", async () => {

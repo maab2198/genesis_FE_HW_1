@@ -1,21 +1,4 @@
-import feed from "../assets/json/mockData/feed.json"
-import userInfo from "../assets/json/mockData/user-info.json"
-const TESTMODE = false
-/*
-config for rapidapi
-const PATH = "https://tiktok33.p.rapidapi.com"
-
-const HEADERS = {
-  "x-rapidapi-host": "tiktok33.p.rapidapi.com",
-  "x-rapidapi-key": "e354906d46mshe8a86828f615be6p15a959jsn223d667b7313",
-}
-*/
-
-const PATH_FEED = "https://elves-34f89-default-rtdb.firebaseio.com/feed.json"
-const PATH_USER =
-  "https://elves-34f89-default-rtdb.firebaseio.com/userInfo.json"
-const PATH_USER_FEED =
-  "https://elves-34f89-default-rtdb.firebaseio.com/feed.json"
+const {PATH_FEED,PATH_USER, PATH_USER_FEED } = process.env;
 
 export async function getTrendingFeed() {
   let trendingFeed
