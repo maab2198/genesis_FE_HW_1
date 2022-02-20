@@ -9,7 +9,7 @@ const Video = ({ videoUrl }) => (
     controls=""
     name="Video Name"
     className={styles.video}
-    src={mockVideo || videoUrl  }
+    src={mockVideo || videoUrl}
     type="video/mp4"
     video="100%"
     onMouseOver={(event) => event.target.play()}
