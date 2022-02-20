@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
@@ -16,3 +17,5 @@ jobs:
           heroku_app_name: tiktuk
           heroku_email: maab2198@gmail.com
           branch: "dev"
+        env:
+          CI: false
