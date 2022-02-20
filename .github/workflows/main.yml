@@ -15,4 +15,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: tiktuk
           heroku_email: maab2198@gmail.com
-          branch: "main"
+          branch: "dev"
