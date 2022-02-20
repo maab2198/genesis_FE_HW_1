@@ -3,7 +3,7 @@
   "repository": "github:maab2198/genesis_FE_HW_1",
   "author": "maab2198",
   "bugs": "https://github.com/maab2198/genesis_FE_HW_1/issues",
-  "homepage": "https://tiktuk.herokuapp.com/trend",
+  "homepage": "https://tiktuk.herokuapp.com",
   "version": "0.2.1",
   "private": true,
   "dependencies": {

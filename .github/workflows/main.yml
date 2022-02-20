@@ -17,5 +17,3 @@ jobs:
           heroku_app_name: tiktuk
           heroku_email: maab2198@gmail.com
           branch: "dev"
-        env:
-          CI: false
